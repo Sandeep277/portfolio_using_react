@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './nav.css'
+import './nav.css';
 import { AiFillHome, AiOutlineMessage } from 'react-icons/ai';
 import { FcAbout } from 'react-icons/fc';
 import { GrUserExpert, GrServices } from 'react-icons/gr';

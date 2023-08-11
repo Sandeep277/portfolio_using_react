@@ -9,6 +9,16 @@ import IMG1 from '../../assets/portfolio1.jpg'
 // We use method for generation multiple project item 
 // leter work on that method
 
+// Define an array of portfolio items
+const portfolioItems = [
+  {
+    title: 'Portfolio Item 1',
+    githubLink: 'https://github.com',
+    liveDemoLink: 'https://dribbble.com/Alien_pixels',
+    imageSrc: IMG1,
+  },
+  // Add more portfolio items as needed
+];
 
 export default function Portfolio() {
   return (
@@ -17,67 +27,19 @@ export default function Portfolio() {
       <h2>Portfolio</h2>
 
       <div className="container portfolio__container">
-        <article className="portfolio__item">
-          <div className="portfolio__item-image">
-            <img src={IMG1} alt="" />
-          </div>
-          <h3>This is a portfolio item title</h3>
-          <div className="portfolio__item-cta">
-            <a href="https://github.com" className="btn" target='_blank'>Github</a>
-            <a href="https://dribbble.com/Alien_pixels" className="btn btn-primary" target='_blank'>Live Demo</a>
-          </div>
-        </article>
-        <article className="portfolio__item">
-          <div className="portfolio__item-image">
-            <img src={IMG1} alt="" />
-          </div>
-          <h3>This is a portfolio item title</h3>
-          <div className="portfolio__item-cta">
-            <a href="https://github.com" className="btn" target='_blank'>Github</a>
-            <a href="https://dribbble.com/Alien_pixels" className="btn btn-primary" target='_blank'>Live Demo</a>
-          </div>
-        </article>
-        <article className="portfolio__item">
-          <div className="portfolio__item-image">
-            <img src={IMG1} alt="" />
-          </div>
-          <h3>This is a portfolio item title</h3>
-          <div className="portfolio__item-cta">
-            <a href="https://github.com" className="btn" target='_blank'>Github</a>
-            <a href="https://dribbble.com/Alien_pixels" className="btn btn-primary" target='_blank'>Live Demo</a>
-          </div>
-        </article>
-        <article className="portfolio__item">
-          <div className="portfolio__item-image">
-            <img src={IMG1} alt="" />
-          </div>
-          <h3>This is a portfolio item title</h3>
-          <div className="portfolio__item-cta">
-            <a href="https://github.com" className="btn" target='_blank'>Github</a>
-            <a href="https://dribbble.com/Alien_pixels" className="btn btn-primary" target='_blank'>Live Demo</a>
-          </div>
-        </article>
-        <article className="portfolio__item">
-          <div className="portfolio__item-image">
-            <img src={IMG1} alt="" />
-          </div>
-          <h3>This is a portfolio item title</h3>
-          <div className="portfolio__item-cta">
-            <a href="https://github.com" className="btn" target='_blank'>Github</a>
-            <a href="https://dribbble.com/Alien_pixels" className="btn btn-primary" target='_blank'>Live Demo</a>
-          </div>
-        </article>
-        <article className="portfolio__item">
-          <div className="portfolio__item-image">
-            <img src={IMG1} alt="" />
-          </div>
-          <h3>This is a portfolio item title</h3>
-          <div className="portfolio__item-cta">
-            <a href="https://github.com" className="btn" target='_blank'>Github</a>
-            <a href="https://dribbble.com/Alien_pixels" className="btn btn-primary" target='_blank'>Live Demo</a>
-          </div>
-        </article>
+        {portfolioItems.map((item, index) => (
+          <article className="portfolio__item" key={index}>
+            <div className="portfolio__item-image">
+              <img src={item.imageSrc} alt="" />
+            </div>
+            <h3>{item.title}</h3>
+            <div className="portfolio__item-cta">
+              <a href={item.githubLink} className="btn" target='_blank' rel="noopener noreferrer">Github</a>
+              <a href={item.liveDemoLink} className="btn btn-primary" target='_blank' rel="noopener noreferrer">Live Demo</a>
+            </div>
+          </article>
+        ))}
       </div>
     </section>
-  )
+  );
 }
