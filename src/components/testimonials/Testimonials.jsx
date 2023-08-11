@@ -10,7 +10,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper';
 
 // Import Swiper styles
-import 'swiper/swiper.min.css'; // Import the main swiper styles
+import 'swiper/swiper-bundle.min.css'; // Import the main swiper styles
 import 'swiper/components/pagination/pagination.min.css'; // Import pagination styles
 
 // Create an array of testimonial data
